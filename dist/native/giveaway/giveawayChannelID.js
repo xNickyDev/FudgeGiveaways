@@ -17,7 +17,7 @@ exports.default = new forgescript_1.NativeFunction({
             description: "The giveaway to pull data from",
             rest: false,
             required: true,
-            type: forgescript_1.ArgType.String,
+            type: forgescript_1.ArgType.Giveaway,
         },
     ],
     output: forgescript_1.ArgType.Channel,

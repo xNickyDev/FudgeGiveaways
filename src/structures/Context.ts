@@ -1,5 +1,5 @@
 import { Context as BaseContext, IContextCache } from "@tryforge/forgescript"
-import { ExtendedStates, IExtendedRunnable } from "../types"
+import { IExtendedRunnable } from "../types"
 import { Snowflake } from "discord.js"
 import { Giveaway, MongoGiveaway } from "./Giveaway"
 
@@ -37,13 +37,5 @@ export class Context extends BaseContext {
                 : this.obj instanceof Giveaway
                     ? this.obj
                     : null)
-    }
-}
-
-declare module "@tryforge/forgescript" {
-    interface Context {
-        giveaway: Giveaway | MongoGiveaway | null
-        extendedStates?: ExtendedStates
-        requirements?: Partial<IGiveawayRequirements>
     }
 }

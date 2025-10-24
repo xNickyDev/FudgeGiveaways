@@ -13,7 +13,7 @@ export default new NativeFunction({
             description: "The giveaway to pull data from",
             rest: false,
             required: true,
-            type: ArgType.String,
+            type: ArgType.Giveaway,
         },
     ],
     output: ArgType.Channel,

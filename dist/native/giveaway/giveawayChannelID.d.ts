@@ -4,7 +4,7 @@ declare const _default: NativeFunction<[{
     description: string;
     rest: false;
     required: true;
-    type: ArgType.String;
+    type: ArgType;
 }], true>;
 export default _default;
 //# sourceMappingURL=giveawayChannelID.d.ts.map

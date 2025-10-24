@@ -1,5 +1,5 @@
-import { Sendable, IStates, IRunnable } from "@tryforge/forgescript"
-import { Giveaway } from "./structures"
+import { Sendable, IStates, IRunnable, IArg } from "@tryforge/forgescript"
+import { Giveaway, IGiveawayRequirements, MongoGiveaway } from "./structures"
 
 export type ExtendedSendable = Sendable | Giveaway
 
@@ -17,4 +17,20 @@ export type ExtendedStates = {
 export interface IExtendedRunnable extends IRunnable {
     obj: ExtendedSendable
     states?: ExtendedStates
+}
+
+declare module "@tryforge/forgescript" {
+    interface Context {
+        giveaway: Giveaway | MongoGiveaway | null
+        extendedStates?: ExtendedStates
+        requirements?: Partial<IGiveawayRequirements>
+    }
+
+    interface CompiledFunction {
+        resolveGiveaway(ctx: Context, arg: IArg, str: string, ref: unknown[]): Promise<void | Giveaway | null>
+    }
+
+    enum ArgType {
+        Giveaway
+    }
 }

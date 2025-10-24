@@ -1,5 +1,5 @@
 import { Context as BaseContext, IContextCache } from "@tryforge/forgescript";
-import { ExtendedStates, IExtendedRunnable } from "../types";
+import { IExtendedRunnable } from "../types";
 import { Snowflake } from "discord.js";
 import { Giveaway, MongoGiveaway } from "./Giveaway";
 export interface IExtendedContextCache extends IContextCache {
@@ -16,14 +16,7 @@ export declare class Context extends BaseContext {
     requirements: Partial<IGiveawayRequirements>;
     constructor(runtime: IExtendedRunnable);
     get obj(): import("../types").ExtendedSendable;
-    get extendedStates(): ExtendedStates | undefined;
+    get extendedStates(): import("../types").ExtendedStates | undefined;
     get giveaway(): Giveaway | null;
-}
-declare module "@tryforge/forgescript" {
-    interface Context {
-        giveaway: Giveaway | MongoGiveaway | null;
-        extendedStates?: ExtendedStates;
-        requirements?: Partial<IGiveawayRequirements>;
-    }
 }
 //# sourceMappingURL=Context.d.ts.map
