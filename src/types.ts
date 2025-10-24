@@ -26,11 +26,11 @@ declare module "@tryforge/forgescript" {
         requirements?: Partial<IGiveawayRequirements>
     }
 
-    interface CompiledFunction {
-        resolveGiveaway(ctx: Context, arg: IArg, str: string, ref: unknown[]): Promise<void | Giveaway | null>
-    }
-
     enum ArgType {
         Giveaway
+    }
+
+    interface CompiledFunction {
+        resolveGiveaway(ctx: Context, arg: IArg, str: string, ref: unknown[]): Promise<void | Giveaway | null>
     }
 }

@@ -20,11 +20,11 @@ declare module "@tryforge/forgescript" {
         extendedStates?: ExtendedStates;
         requirements?: Partial<IGiveawayRequirements>;
     }
-    interface CompiledFunction {
-        resolveGiveaway(ctx: Context, arg: IArg, str: string, ref: unknown[]): Promise<void | Giveaway | null>;
-    }
     enum ArgType {
         Giveaway
+    }
+    interface CompiledFunction {
+        resolveGiveaway(ctx: Context, arg: IArg, str: string, ref: unknown[]): Promise<void | Giveaway | null>;
     }
 }
 //# sourceMappingURL=types.d.ts.map
