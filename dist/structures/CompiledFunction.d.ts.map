@@ -1,1 +1,0 @@
-{"version":3,"file":"CompiledFunction.d.ts","sourceRoot":"","sources":["../../src/structures/CompiledFunction.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,IAAI,oBAAoB,EAAE,OAAO,EAAE,IAAI,EAAE,MAAM,uBAAuB,CAAA;AAG/F,qBAAa,gBAAiB,SAAQ,oBAAoB;IACzC,eAAe,CAAC,GAAG,EAAE,OAAO,EAAE,GAAG,EAAE,IAAI,EAAE,GAAG,EAAE,MAAM,EAAE,GAAG,EAAE,KAAK,CAAC,OAAO,CAAC;CAIzF"}

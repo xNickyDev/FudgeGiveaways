@@ -1,5 +1,5 @@
-import { Sendable, IStates, IRunnable, IArg } from "@tryforge/forgescript"
-import { Giveaway, IGiveawayRequirements, MongoGiveaway } from "./structures"
+import { Sendable, IStates, IRunnable, IArg, CompiledFunction, Context } from "@tryforge/forgescript"
+import { Database, Giveaway, IGiveawayRequirements, MongoGiveaway } from "./structures"
 
 export type ExtendedSendable = Sendable | Giveaway
 
@@ -33,4 +33,15 @@ declare module "@tryforge/forgescript" {
     interface CompiledFunction {
         resolveGiveaway(ctx: Context, arg: IArg, str: string, ref: unknown[]): Promise<void | Giveaway | null>
     }
+}
+
+CompiledFunction.prototype.resolveGiveaway = async function (
+    this: CompiledFunction,
+    ctx: Context,
+    arg: IArg,
+    str: string,
+    ref: Array<unknown>
+) {
+    if (!CompiledFunction.IdRegex.test(str)) return
+    return await Database.get(str).catch(ctx.noop)
 }
