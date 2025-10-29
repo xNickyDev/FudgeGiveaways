@@ -22,7 +22,6 @@ export class ForgeGiveaways extends ForgeExtension {
     name = "forge.giveaways"
     description = require("../package.json").description
     version = require("../package.json").version
-    requireExtensions = ["forge.db"]
 
     public emitter = new TypedEmitter<TransformEvents<IGiveawayEvents>>()
 

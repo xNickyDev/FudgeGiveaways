@@ -26,7 +26,6 @@ class ForgeGiveaways extends forgescript_1.ForgeExtension {
     name = "forge.giveaways";
     description = require("../package.json").description;
     version = require("../package.json").version;
-    requireExtensions = ["forge.db"];
     emitter = new tiny_typed_emitter_1.TypedEmitter();
     giveawaysManager;
     commands;

@@ -18,7 +18,6 @@ export declare class ForgeGiveaways extends ForgeExtension {
     name: string;
     description: any;
     version: any;
-    requireExtensions: string[];
     emitter: TypedEmitter<TransformEvents<IGiveawayEvents>>;
     giveawaysManager: GiveawaysManager;
     commands: GiveawaysCommandManager;
